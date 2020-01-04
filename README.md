@@ -1,7 +1,7 @@
 # react-gridlines
 A grid lines background. Gridlines is a configurable React component.
 
-![Grid lines screenshot](https://github.com/alfed7/gridlines/blob/master/docs/images/gridlines.png "Grid lines screenshot")
+![Grid lines screenshot](https://raw.githubusercontent.com/alfed7/gridlines/master/docs/images/gridlines.png "Grid lines screenshot")
 
 # Install
 ```
