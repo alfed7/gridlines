@@ -1,0 +1,43 @@
+{
+  "name": "react-gridlines",
+  "version": "1.0.1",
+  "description": "React component to draw grid lines in background.",
+  "main": "./build/index.js",
+  "scripts": {
+    "start": "node ./node_modules/webpack/bin/webpack --watch --mode development",
+    "build": "node ./node_modules/webpack/bin/webpack --mode production",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfed7/gridlines.git"
+  },
+  "keywords": [
+    "Grid lines",
+    "net",
+    "svg",
+    "Grid lines background"
+  ],
+  "author": "Alexander Fedorenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alfed7/gridlines/issues"
+  },
+  "homepage": "https://github.com/alfed7/gridlines#readme",
+  "dependencies": {
+    "js-base64": "^2.5.1",
+    "react": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/plugin-transform-react-jsx": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "jest": "^24.9.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
