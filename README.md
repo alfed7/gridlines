@@ -34,6 +34,7 @@ export default App;
 
 # Supported properties
 
+```
 component - replace <div> with another element
 cellWidth - width of the primary cell
 cellHeight - height of the primary cell, equals to cellWidth if not provided
@@ -45,6 +46,7 @@ cellHeight2
 lineColor2
 strokeWidth2
 dashArray2
+```
 
 ## License
 [MIT](https://couto.mit-license.org/)
