@@ -1,6 +1,6 @@
 {
   "name": "react-gridlines",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React component to draw grid lines in background.",
   "main": "./build/index.js",
   "scripts": {
