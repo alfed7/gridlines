@@ -1,14 +1,7 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import buildGridSvg from "./svgBuilder";
-import { getPageSize } from "./pageSizes";
 
-function getWidthAndHeight(pageSize, scale) {
-  const k = 1.5;
-  if (pageSize)
-    return { width: pageSize[0] * k * scale, height: pageSize[1] * k * scale };
-  return {};
-}
 const GridLines = React.forwardRef((props, ref) => {
   const {
     component = "div",
@@ -34,13 +27,6 @@ const GridLines = React.forwardRef((props, ref) => {
   const h2 = cellHeight2 || cellWidth2;
   const ComponentProp = component;
 
-  const [pageSize, setPageSize] = useState(null);
-
-  const widthHeight = useMemo(() => getWidthAndHeight(pageSize, scale), [
-    pageSize,
-    scale,
-  ]);
-
   useEffect(() => {
     setBg(
       buildGridSvg(
@@ -54,13 +40,11 @@ const GridLines = React.forwardRef((props, ref) => {
         lineColor2,
         strokeWidth2,
         dashArray2,
-        scale
+        scale,
+        format,
+        orientation
       )
     );
-
-    if (format) {
-      setPageSize(getPageSize(format, orientation));
-    }
   }, [
     cellWidth,
     h,
@@ -77,41 +61,16 @@ const GridLines = React.forwardRef((props, ref) => {
     scale,
   ]);
 
-  console.log(children);
   return (
     <ComponentProp
       className={className}
       ref={ref}
-      style={
-        format
-          ? {
-              //display: "flex",
-              //flexDirection: "column",
-              //width: "100%",
-              background: "#eee",
-              padding: "1em",
-            }
-          : {
-              backgroundImage: bg,
-            }
-      }
+      style={{
+        backgroundImage: bg,
+      }}
       {...rest}
     >
-      {format ? (
-        <div
-          //className={className}
-          style={{
-            ...widthHeight,
-            background: "white",
-            backgroundImage: bg,
-            boxShadow: "2px 2px 5px 0px rgba(0, 0, 0, 0.5)",
-          }}
-        >
-          {children}
-        </div>
-      ) : (
-        children
-      )}
+      {children}
     </ComponentProp>
   );
 });

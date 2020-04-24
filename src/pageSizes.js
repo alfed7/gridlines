@@ -57,5 +57,5 @@ export function getPageSize(formatName, orientation = "portrait") {
 
   const portraitSize = SIZES[f];
   if (orientation.toLowerCase() === "portrait") return portraitSize;
-  else return portraitSize.reverse();
+  else return [portraitSize[1], portraitSize[0]];
 }
