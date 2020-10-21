@@ -51,7 +51,7 @@ const SIZES = {
   TABLOID: [792.0, 1224.0],
 };
 
-export function getPageSize(formatName, orientation = "portrait") {
+export function getPageSize(formatName = "", orientation = "portrait") {
   const f = formatName.toUpperCase();
   if (!SIZES[f]) return null;
 

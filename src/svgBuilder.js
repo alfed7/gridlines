@@ -5,7 +5,7 @@ function getWidthAndHeight(pageSize, scale) {
   const k = 1;
   if (pageSize)
     return { width: pageSize[0] * k * scale, height: pageSize[1] * k * scale };
-  return {};
+  return null;
 }
 
 function buildLine(
@@ -80,7 +80,7 @@ function buildGridSvg(
   const pat = buildPage(w, h, page, `${cell1}${cell2}`);
 
   const svgW = page ? page.width : w,
-    svgH = page ? page.height : w;
+    svgH = page ? page.height : h;
   var svg = `<svg xmlns='http://www.w3.org/2000/svg' width='${svgW}' height='${svgH}'>${pat}</svg>`;
   var svg64 = Base64.encode(svg); //window.btoa(svg);
   var s = `url('data:image/svg+xml;base64,${svg64}')`;
